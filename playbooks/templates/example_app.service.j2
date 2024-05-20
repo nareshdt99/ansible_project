@@ -1,0 +1,14 @@
+[Unit]
+Description=Example Flask Application
+After=network.target
+
+[Service]
+User=www-data
+Group=www-data
+WorkingDirectory={{ app_deploy_location }}
+Environment="PATH={{ app_deploy_location }}/venv/bin"
+ExecStart={{ app_deploy_location }}/venv/bin/flask run --host=0.0.0.0 --port={{ app_port }}
+
+[Install]
+WantedBy=multi-user.target
+

@@ -1,0 +1,17 @@
+- name: Check custom CA certificates for validity
+  command: openssl x509 -noout -checkend 0 -in /usr/local/share/ca-certificates/{{ item }}
+  register: cert_check
+  failed_when: cert_check.rc != 0
+  with_fileglob:
+    - "files/custom_certs/*.crt"
+
+- name: Install custom CA certificates
+  copy:
+    src: "{{ item }}"
+    dest: /usr/local/share/ca-certificates/{{ item | basename }}
+  with_fileglob:
+    - "files/custom_certs/*.crt"
+
+- name: Update CA certificates
+  command: update-ca-certificates
+

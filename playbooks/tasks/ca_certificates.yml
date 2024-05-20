@@ -1,0 +1,5 @@
+- name: Install standard CA certificates
+  apt:
+    name: ca-certificates
+    state: present
+
