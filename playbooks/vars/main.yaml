@@ -1,4 +1,4 @@
 app_port: 5000
 app_deploy_location: /opt/example
-app_wheel_file: example_app.whl
+app_wheel_file: files/application/Example-1.1.1-py3-none-any.whl
 
