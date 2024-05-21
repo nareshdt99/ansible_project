@@ -34,7 +34,8 @@ ansible_project/
 |   |   └── custom_ca3.crt
 |   |
 │   └── application/
-│       └── 
+│       └── Example-1.1.1-py3-none-any.whl
+|       └── app.py
 └── inventory/
     └── hosts.ini
 
