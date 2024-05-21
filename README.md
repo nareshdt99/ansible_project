@@ -40,4 +40,33 @@ ansible_project/
     └── hosts.ini
 
 
+## Steps to Set Up the Project
+
+### 1. Clone the Repository
+
+## Steps to Set Up the Project
+
+### 1. Clone the Repository
+git clone <https://github.com/nareshdt99/ansible_project>
+cd ansible_project
+
+### 2. Configure Git
+Set your global Git configuration:
+git config --global user.name "naresh"
+git config --global user.email "nareshdt99@example.com"
+
+### 3. Define Inventory
+Edit inventory/hosts.ini to specify your target hosts:
+target_host ansible_host=your_target_host_ip ansible_user=your_user ansible_ssh_pass= your_passwd
+
+### 4. Set Variables
+Edit playbooks/vars/main.yml to set the variables:
+app_port: 5000
+app_deploy_location: /opt/example
+app_wheel_file: Example-1.1.1-py3-none-any.whl
+
+### 5. Run the Playbook
+Execute the main playbook:
+ansible-playbook -i inventory/hosts.ini playbooks/main.yml
+
 
